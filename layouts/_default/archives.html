@@ -1,0 +1,40 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+</header>
+{{- end }}
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- if site.Params.ShowAllPagesInArchive }}
+{{- $pages = site.RegularPages }}
+{{- end }}
+
+{{- /* 核心改变：按 archive_year 分组，并反向排序（2024 在前） */}}
+{{- range ($pages.GroupByParam "archive_year").Reverse }}
+  {{- if .Key }}
+    {{- $year := .Key }}
+    <h2 id="{{ $year }}" class="archive-year">{{ $year }} 年</h2>
+
+    {{- range .Pages.ByDate.Reverse }}
+    <article class="archive-entry">
+        <h3 class="archive-entry-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{- if .Draft }} <sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+        </h3>
+        <div class="archive-meta">
+            {{- /* 这里显示的是发布时间，方便你区分 */}}
+            <span>发布于：{{ .Date.Format "2006-01-02" }}</span>
+            {{- with .Params.tags }}
+            <span class="archive-tags">
+                {{- range . }}<a href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a> {{ end }}
+            </span>
+            {{- end }}
+        </div>
+    </article>
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- end }}

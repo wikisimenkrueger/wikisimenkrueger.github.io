@@ -2,5 +2,32 @@ baseURL = 'https://wikisimenkrueger.github.io/'
 locale = 'zh-cn'
 title = 'My New Hugo Project'
 theme = ['PaperMod']
+
 [outputs]
   home = ["HTML", "RSS"]
+
+[[menu.main]]
+identifier = "posts"
+name = "文章"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "归档"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+identifier = "search"
+name = "搜索"
+url = "/search/"
+weight = 30
+
+[params]
+  # 确保首页列出文章 (部分主题叫 ShowPageInHome，部分叫 mainSections 机制)
+  ShowPageInHome = true
+
+[params.homeInfoParams]
+  Title = "我的竞体存档"
+  Content = "这里是关于比赛的新闻与归档。"
