@@ -127,12 +127,8 @@ jobs:
           path: ${{ runner.temp }}/.cache/hugo
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
-      - name: Generate Pagefind index
-        run: |
-          # 安装带有 UI 的完整 pagefind 包
-          npm install -g pagefind@1.5.2
-          # 生成索引，并确保输出到 public 目录下
-          pagefind --site public --force-language zh-cn
+      - name: Build Pagefind Search Index
+        run: npx -y pagefind --site public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

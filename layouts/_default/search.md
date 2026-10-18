@@ -1,13 +1,14 @@
-{{- define "main" }}
-<header class="page-header">
-    <h1>{{ .Title }}</h1>
-</header>
+---
+title: "搜索"
+layout: "page"
+summary: "search"
+---
 
-<!-- 引入 Pagefind 默认 UI 的样式和脚本 -->
+<!-- 引入 Pagefind 的样式和脚本 -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
 
-<!-- 搜索容器 -->
+<!-- 搜索框容器 -->
 <div id="search"></div>
 
 <script>
@@ -15,14 +16,7 @@
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            showImages: false,
-            translations: {
-                placeholder: "搜索存档...",
-                zero_results: "没有找到 [SEARCH_TERM] 的结果",
-                many_results: "找到 [COUNT] 个关于 [SEARCH_TERM] 的结果",
-                one_result: "找到 1 个关于 [SEARCH_TERM] 的结果"
-            }
+            resetStyles: false // 保持与主题风格协调
         });
     });
 </script>
-{{- end }}
