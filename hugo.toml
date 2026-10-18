@@ -46,5 +46,5 @@ weight = 30
   ShowPageInHome = true
 
 [params.homeInfoParams]
-  Title = "我的竞体存档"
-  Content = "这里是关于比赛的新闻与归档。"
+  Title = "Simen Hegstad Krüger存档"
+  Content = "有关挪威越野滑雪运动员Simen Hegstad Krüger的存档。"
