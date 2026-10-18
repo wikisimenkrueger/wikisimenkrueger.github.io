@@ -127,8 +127,8 @@ jobs:
           path: ${{ runner.temp }}/.cache/hugo
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
-      - name: Build Pagefind Search Index
-        run: npx -y pagefind --site public
+      - name: Generate Pagefind index
+        run: npx -y pagefind@1.5.2 --site public --force-language zh-cn
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
