@@ -9,20 +9,33 @@
 {{- /* 获取全站所有的常规文章 */}}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
-{{- /* 按自定义的 archive_year 字段降序分组 */}}
+{{- /* 第一层：按自定义的 archive_year 字段降序分组 */}}
 {{- range ($pages.GroupByParam "archive_year").Reverse }}
   {{- if .Key }}
-    <h2 id="{{ .Key }}" class="archive-year" style="margin-top: 2rem;">{{ .Key }} 年</h2>
-    
-    {{- range .Pages.ByDate.Reverse }}
-    <article class="archive-entry" style="margin-bottom: 1rem;">
-        <h3 class="archive-entry-title" style="margin: 0 0 5px 0;">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
-        <div class="archive-meta" style="font-size: 0.85rem; color: var(--secondary);">
-            <span>发布于：{{ .Date.Format "2006-01-02" }}</span>
-        </div>
-    </article>
+    {{- $year := .Key }}
+    <h2 id="{{ $year }}" class="archive-year" style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">{{ $year }} 年</h2>
+
+    {{- /* 第二层：按 event_date 的前 7 个字符（即 YYYY-MM）分组 */}}
+    {{- range .Pages.GroupByParam "event_date" }}
+      {{- /* 截取前面的年月，比如把 2023-08-25 截成 2023年08月 */}}
+      {{- $yearMonth := substr .Key 0 7 }}
+      
+      <h3 class="archive-month" style="margin-top: 1.5rem; color: var(--secondary); font-size: 1.2rem;">
+        {{ replace $yearMonth "-" "年" }}月
+      </h3>
+
+      {{- /* 第三层：按 event_date 降序排列文章 */}}
+      {{- range .Pages.ByParam "event_date" }}
+      <article class="archive-entry" style="margin-bottom: 1rem; margin-left: 1rem;">
+          <h4 class="archive-entry-title" style="margin: 0 0 5px 0; font-size: 1.1rem;">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h4>
+          <div class="archive-meta" style="font-size: 0.85rem; color: var(--secondary);">
+              {{- /* 显示你手写的真实发生日期 */}}
+              <span>事件日期：{{ .Params.event_date }}</span>
+          </div>
+      </article>
+      {{- end }}
     {{- end }}
   {{- end }}
 {{- end }}
