@@ -1,6 +1,9 @@
 baseURL = 'https://wikisimenkrueger.github.io/'
 locale = 'zh-cn'
 title = 'My New Hugo Project'
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+
 theme = ['PaperMod']
 
 [outputs]
@@ -23,6 +26,7 @@ identifier = "search"
 name = "搜索"
 url = "/search/"
 weight = 30
+
 
 [params]
   # 确保首页列出文章 (部分主题叫 ShowPageInHome，部分叫 mainSections 机制)
