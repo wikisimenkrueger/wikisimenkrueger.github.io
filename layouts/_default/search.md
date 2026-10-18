@@ -1,22 +1,27 @@
----
-title: "搜索"
-layout: "page"
-summary: "search"
----
+{{ define "main" }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+</header>
 
-<!-- 引入 Pagefind 的样式和脚本 -->
+<!-- 挂载 Pagefind 官方 UI -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
 
-<!-- 搜索框容器 -->
-<div id="search"></div>
+<div id="pagefind-search-container" style="margin-top: 2rem;"></div>
 
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
         new PagefindUI({ 
-            element: "#search", 
+            element: "#pagefind-search-container", 
             showSubResults: true,
-            resetStyles: false // 保持与主题风格协调
+            showImages: false,
+            translations: {
+                placeholder: "搜索存档...",
+                zero_results: "没有找到 [SEARCH_TERM] 的结果",
+                many_results: "找到 [COUNT] 个关于 [SEARCH_TERM] 的结果",
+                one_result: "找到 1 个关于 [SEARCH_TERM] 的结果"
+            }
         });
     });
 </script>
+{{ end }}
