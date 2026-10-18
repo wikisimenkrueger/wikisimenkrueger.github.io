@@ -22,10 +22,12 @@
 <body id="top">
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
+    
+    <!-- 核心修改点：只有 .IsPage 为真（即具体文章页）才加 data-pagefind-body -->
     <main class="main"{{ if .IsPage }} data-pagefind-body{{ end }}>
         {{- block "main" . }}{{ end }}
     </main>
+    
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
-
 </html>
