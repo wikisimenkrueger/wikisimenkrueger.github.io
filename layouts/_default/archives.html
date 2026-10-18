@@ -6,31 +6,21 @@
 </header>
 {{- end }}
 
+{{- /* 获取全站所有的常规文章 */}}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- if site.Params.ShowAllPagesInArchive }}
-{{- $pages = site.RegularPages }}
-{{- end }}
 
-{{- /* 核心改变：按 archive_year 分组，并反向排序（2024 在前） */}}
+{{- /* 按自定义的 archive_year 字段降序分组 */}}
 {{- range ($pages.GroupByParam "archive_year").Reverse }}
   {{- if .Key }}
-    {{- $year := .Key }}
-    <h2 id="{{ $year }}" class="archive-year">{{ $year }} 年</h2>
-
+    <h2 id="{{ .Key }}" class="archive-year" style="margin-top: 2rem;">{{ .Key }} 年</h2>
+    
     {{- range .Pages.ByDate.Reverse }}
-    <article class="archive-entry">
-        <h3 class="archive-entry-title">
+    <article class="archive-entry" style="margin-bottom: 1rem;">
+        <h3 class="archive-entry-title" style="margin: 0 0 5px 0;">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{- if .Draft }} <sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
         </h3>
-        <div class="archive-meta">
-            {{- /* 这里显示的是发布时间，方便你区分 */}}
+        <div class="archive-meta" style="font-size: 0.85rem; color: var(--secondary);">
             <span>发布于：{{ .Date.Format "2006-01-02" }}</span>
-            {{- with .Params.tags }}
-            <span class="archive-tags">
-                {{- range . }}<a href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a> {{ end }}
-            </span>
-            {{- end }}
         </div>
     </article>
     {{- end }}
