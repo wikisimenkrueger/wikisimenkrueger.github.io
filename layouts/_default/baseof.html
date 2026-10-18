@@ -23,11 +23,12 @@
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
     
-    <!-- 核心修改点：只有 .IsPage 为真（即具体文章页）才加 data-pagefind-body -->
-    <main class="main"{{ if .IsPage }} data-pagefind-body{{ end }}>
+    <!-- 只有具体文章页(.IsPage) 且 不是搜索页(ne .Layout "search") 才加上 data-pagefind-body -->
+    <main class="main"{{ if and .IsPage (ne .Layout "search") }} data-pagefind-body{{ end }}>
         {{- block "main" . }}{{ end }}
     </main>
     
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
+
 </html>
