@@ -2,3 +2,5 @@ baseURL = 'https://wikisimenkrueger.github.io/'
 locale = 'zh-cn'
 title = 'My New Hugo Project'
 theme = ['PaperMod']
+[outputs]
+  home = ["HTML", "RSS"]
