@@ -1,0 +1,11 @@
+- id: tags
+  translation: "标签"
+
+- id: tag
+  translation: "标签"
+
+- id: archives
+  translation: "归档"
+
+- id: search
+  translation: "搜索"
