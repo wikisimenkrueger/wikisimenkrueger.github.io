@@ -48,3 +48,7 @@ weight = 30
 [params.homeInfoParams]
   Title = "Simen Hegstad Krüger存档"
   Content = "有关挪威越野滑雪运动员Simen Hegstad Krüger的存档。"
+
+[params]
+  # 这样会输出：2024年05月20日
+  DateFormat = "2006年01月02日"
