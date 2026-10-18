@@ -1,6 +1,6 @@
 baseURL = 'https://wikisimenkrueger.github.io/'
 locale = 'zh-cn'
-title = 'My New Hugo Project'
+title = 'Simen Hegstad Krüger存档'
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 
