@@ -1,0 +1,19 @@
+/* 声明你的自定义字体 */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/LXGWWenKaiGB-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 让文字先显示，字体加载完再替换，避免白屏 */
+}
+
+/* 全局应用字体（正文、标题等） */
+body {
+  font-family: 'MyCustomFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 强制代码块也使用（如果需要） */
+.post-content pre,
+.post-content code {
+  font-family: 'MyCustomFont', Consolas, Monaco, monospace;
+}
