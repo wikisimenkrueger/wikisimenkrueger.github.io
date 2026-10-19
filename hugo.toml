@@ -1,3 +1,4 @@
+buildFuture = true
 baseURL = 'https://wikisimenkrueger.github.io/'
 locale = 'zh-cn'
 title = 'Simen Hegstad Krüger存档'
@@ -56,5 +57,3 @@ weight = 30
     [markup.goldmark.extensions]
       table = true
 
-[build]
-  buildFuture = true
