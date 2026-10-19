@@ -51,3 +51,7 @@ weight = 30
   Title = "Simen Hegstad Krüger存档"
   Content = "有关挪威越野滑雪运动员Simen Hegstad Krüger的存档。"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      table = true

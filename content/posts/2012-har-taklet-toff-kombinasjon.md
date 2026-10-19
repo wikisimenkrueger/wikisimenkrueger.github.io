@@ -1,5 +1,5 @@
 ---
-title: "【20120710】langrenn.com对19岁的Simen Hegstad Krüger的采访"
+title: 【20120710】langrenn.com对19岁的Simen Hegstad Krüger的采访
 date: 2026-10-18   # 你的实际发布时间
 event_date: "2012-07-10"
 archive_year: "2012"              # 你希望它归档的年份（必须是带引号的字符串）
