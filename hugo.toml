@@ -55,3 +55,6 @@ weight = 30
   [markup.goldmark]
     [markup.goldmark.extensions]
       table = true
+
+[build]
+  buildFuture = true
