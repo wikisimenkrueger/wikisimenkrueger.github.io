@@ -49,3 +49,9 @@ body {
 .post-content table tr:hover {
   background-color: var(--entry);
 }
+
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
