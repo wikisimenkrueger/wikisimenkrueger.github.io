@@ -17,3 +17,35 @@ body {
 .post-content code {
   font-family: 'MyCustomFont', Consolas, Monaco, monospace;
 }
+/* 全局改变表格样式，去掉边框，还原纯净文本感 */
+.post-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+  border: none;
+}
+
+/* 去除所有单元格的边框 */
+.post-content table th,
+.post-content table td {
+  border: none;
+  padding: 6px 12px;
+  text-align: left;
+}
+
+/* 表头：保持文字稍微加粗，底部留一条极细的线，增加层次感 */
+.post-content table th {
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+}
+
+/* 偶数行可以加一点点极淡的背景色（如果你想要纯白就删掉这行） */
+.post-content table tr:nth-child(even) {
+  background-color: transparent; 
+}
+
+/* 鼠标悬浮时高亮当前行 */
+.post-content table tr:hover {
+  background-color: var(--entry);
+}

@@ -3,6 +3,7 @@ title: "【20120710】langrenn.com对19岁的Simen Hegstad Krüger的采访"
 date: 2026-10-18   # 你的实际发布时间
 event_date: "2012-07-10"
 archive_year: "2012"              # 你希望它归档的年份（必须是带引号的字符串）
+description: "此时Simen Hegstad Krüger刚高中毕业，langrenn.com了解到其学业情况。"
 tags: ["新闻采访", "世青赛","2012年"]
 ---
 ## **Har taklet tøff kombinasjon**
