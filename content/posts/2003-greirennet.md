@@ -1,8 +1,8 @@
 ---
 title: "【20030202】Simen Hegstad Krüger的第一场比赛"
-date: 2026-10-20   # 你的实际发布时间
+date: 2026-10-20   
 event_date: "2003-02-02"
-archive_year: "2003"              # 你希望它归档的年份（必须是带引号的字符串）
+archive_year: "2003"             
 description: "本表格为Simen Hegstad Krüger的第一场比赛，此时他参加9岁组Greirennet。根据Aftenposten新闻可以作证这一点。"
 tags: ["比赛数据", "2003年"]
 ---
