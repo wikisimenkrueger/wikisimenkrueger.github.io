@@ -50,8 +50,34 @@ body {
   background-color: var(--entry);
 }
 
-.post-content table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+/* 去掉表格的边框、阴影和背景色 */
+.post-content table,
+article table,
+table {
+    border: none !important;
+    border-collapse: collapse !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important; /* 不强制撑满100%宽度，更贴近截图效果 */
+    margin-bottom: 1.5rem;
+}
+
+/* 去掉表头和单元格的所有边框与底色，保留合理的列间距 */
+.post-content th,
+.post-content td,
+article th,
+article td,
+table th,
+table td {
+    border: none !important;
+    background: transparent !important;
+    padding: 3px 18px 3px 0 !important; /* 上下紧凑，右侧保留列与列的间距 */
+    text-align: left !important;
+    /* 让数字等宽对齐，非常适合成绩/计时表格 */
+    font-variant-numeric: tabular-nums;
+}
+
+/* 表头文字稍微加粗 */
+table th {
+    font-weight: 600;
 }
