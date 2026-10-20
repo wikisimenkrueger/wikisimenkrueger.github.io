@@ -81,3 +81,23 @@ table td {
 table th {
     font-weight: 600;
 }
+
+/* 调整整个表格的基础字号 */
+.post-content table {
+  font-size: 0.85rem; /* 默认正文通常是 1rem 或 16px，这里改小一点让表格更紧凑 */
+  line-height: 1.4;   /* 稍微缩小行高 */
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* 单独调整表头的字号（通常可以比正文稍微大一点点，或者保持一样并加粗） */
+.post-content table th {
+  font-size: 0.9rem; 
+  font-weight: bold;
+}
+
+/* 调整表格内单元格的内边距（让表格看起来不那么挤） */
+.post-content table th,
+.post-content table td {
+  padding: 8px 12px; 
+}
