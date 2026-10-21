@@ -83,3 +83,5 @@ William Poromaa kan fort bli Sveriges neste store navn. Han har en klar teori om
 **I VM-debuten i 2019 ble Simen Hegstad Krüger nummer fem på femmila. Det er den eneste gangen han ikke har stått på pallen i et mesterskap.**
 
 Publisert: 03.03.23 kl. 01:49
+
+[原文链接](https://www.vg.no/sport/i/3EPbjX/simen-hegstad-kruger-kan-bli-vm-konge-jeg-vil-ikke-vaere-superstjerne)
